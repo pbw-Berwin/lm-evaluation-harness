@@ -1,7 +1,7 @@
-HARNESS_DIR=/dccstor/mit_fm/bpan/Granite-Math/lm-evaluation-harness
+HARNESS_DIR=/dccstor/mit_fm/bpan/Granite-Math/lm-eval-dev/lm-evaluation-harness
 
 export HF_DATASETS_CACHE=/dccstor/mit_fm/bpan/Granite-Math/.cache
-export TRANSFORMERS_CACHE=/dccstor/mit_fm/bpan/Granite-Math/.cache
+export HF_HOME=/dccstor/mit_fm/bpan/Granite-Math/.cache
 
 
 ### begin configure eval parameters

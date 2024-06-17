@@ -32,7 +32,8 @@ def main(args):
     with open(args.output) as f:
         output = json.load(f)
 
-    tasks = [task for task in output['versions']]
+    # tasks = [task for task in output['versions']]
+    tasks = ['python_gsm8k']
 
     results = {}
     for task in tasks:
@@ -49,8 +50,8 @@ def main(args):
             answer = float(doc['output_answer'])
 
             program = doc['metadata']['program'] + "\nprint(solution())"
-
             candidate = answer_of_program(program)
+            
             candidate_answer = parse_float(candidate)
             if answer == candidate_answer:
                 acc = 1
