@@ -146,7 +146,7 @@ def create_mcqa_task(subject):
 
 class MinervaCoTMMLU(MajorityVotingMixin, Task):
     VERSION = 0
-    DATASET_PATH = "hendrycks_test"
+    DATASET_PATH = "cais/mmlu"
     DATASET_NAME = None
 
     ANS_RE = re.compile(r"Final Answer: The final answer is \([ABCD]\).")

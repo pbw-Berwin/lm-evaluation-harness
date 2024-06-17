@@ -470,13 +470,17 @@ class Task(abc.ABC):
             - `datasets.DownloadMode.FORCE_REDOWNLOAD`
                 Fresh download and fresh dataset.
         """
-        self.dataset = datasets.load_dataset(
-            path=self.DATASET_PATH,
-            name=self.DATASET_NAME,
-            data_dir=data_dir,
-            cache_dir=cache_dir,
-            download_mode=download_mode,
-        )
+        kwargs = {
+            'path': self.DATASET_PATH,
+            'name': self.DATASET_NAME,
+            'data_dir': data_dir,
+            'cache_dir': cache_dir,
+            'download_mode': download_mode,
+        }
+        if self.DATASET_NAME == 'GSM8k_structured':
+            kwargs['split'] = {'test': 'test'}
+        
+        self.dataset = datasets.load_dataset(**kwargs)
 
     def should_decontaminate(self):
         """Whether this task supports decontamination against model training set."""
