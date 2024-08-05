@@ -4,8 +4,8 @@ export HF_DATASETS_CACHE=/dccstor/mit_fm/bpan/Granite-Math/.cache
 export HF_HOME=/dccstor/mit_fm/bpan/Granite-Math/.cache
 
 TASKS="minif2f_isabelle_informal2formal"
-MODEL="ibm-granite/granite-3b-code-base"
-NAME="granite-3b-code-base"
+MODEL="ibm-granite/granite-3b-code-instruct"
+NAME="granite-3b-code-instruct"
 
 OUT=${HARNESS_DIR}/output/${NAME}_${TASKS}.json
 mkdir -p ${HARNESS_DIR}/output

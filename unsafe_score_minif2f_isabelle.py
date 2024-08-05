@@ -33,6 +33,7 @@ class Checker(object):
         self.port = port
 
     def _initialize(self):
+        import pdb; pdb.set_trace()
         env = self.initialise_env(
             self.port,
             isa_path=self.isa_path,
